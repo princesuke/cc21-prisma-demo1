@@ -30,3 +30,18 @@ model Post {
   author    User    @relation(fields: [authorId], references: [id])
   authorId  Int
 }
+
+model Student {
+  id          Int       @id @default(autoincrement())
+  name        String
+  email       String    @unique
+  classroom   Classroom @relation(fields: [classroomId], references: [id])
+  classroomId Int
+}
+
+model Classroom {
+  id         Int       @id @default(autoincrement())
+  name       String
+  gradeLevel Int
+  students   Student[]
+}
