@@ -23,11 +23,12 @@ model Classroom {
 
 //lab 3
 model Product {
-  id    Int         @id @default(autoincrement())
-  name  String
-  price Float
-  stock Int
-  items OrderItem[]
+  id       Int         @id @default(autoincrement())
+  name     String
+  price    Float
+  stock    Int
+  deleteAt DateTime?
+  items    OrderItem[]
 }
 
 model OrderItem {
