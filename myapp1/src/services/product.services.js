@@ -21,3 +21,9 @@ export async function searchProduct(q) {
 
   return result;
 }
+
+export async function deleteProductById(id) {
+  await prisma.product.delete({
+    where: { id },
+  });
+}
